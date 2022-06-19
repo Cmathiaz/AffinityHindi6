@@ -390,7 +390,7 @@ if Deva and enablereph and doreph:
                         j = j + 1
                 continue  # get substitute list in correct order
 
-    print("number of reph substitutions to be made =", j)
+    print("number of reph substitutions =", j)
     #print("rephlookupList = ", rephlookupList)
 
 # get rakaar substitution table here
@@ -413,7 +413,7 @@ if Deva and enablerakaar and dorakaar:
                         j = j + 1
                 continue  # get substitute list in correct order
 
-    print("number of rakaar substitutions to be made =", j)
+    print("number of rakaar substitutions =", j)
     #print("rakaarlookupList = ", rakaarlookupList)
 
 # get char substitution type 4 list here
@@ -440,7 +440,7 @@ for k in range(0, len(llList)):
                     j = j + 1
             continue  # get substitute list in correct order
 
-print("number of substitutions type 4 to be made =", j)
+print("number of substitutions type 4 =", j)
 
 if debug:
     print(substList)
@@ -490,7 +490,7 @@ for k in range(0, len(llList)):
                             subst5RuleList.append([subset5index, classindex, classrulenumber, nextglyphclass, lookupruleindex])
                             jjj = jjj + 1
 
-print("number of substitutions type 5 to be made =", j)
+print("number of substitutions type 5 =", j)
 #print("susbt5List (table, glyph)=", subst5List)
 print("number of type 5 classdef =", jj)
 #print("subst5DefList (table, glyph, class) =", subst5DefList)
@@ -565,7 +565,7 @@ for k in range(0, len(llList)):
 
             continue  # get substitute list in correct order
 
-print("number of LA substitutions type 6 to be made =", j)
+print("number of LA substitutions type 6 =", j)
 #print((subst6List))
 
 if debug:
@@ -613,7 +613,7 @@ for k in range(0, len(llList)):
 
             continue  # get substitute list in correct order
 
-print("number of BT substitutions type 6 to be made =", j)
+print("number of BT substitutions type 6 =", j)
 #print((subst6BTList))
 
 if debug:
@@ -636,7 +636,7 @@ for k in range(0, len(subst6List)):
                         print("inglyph name= ", [inglyph, outglyph])
             continue  # get substitute list in correct order
 
-print("number of LA substitutions type 1 to be made =", j)
+print("number of LA substitutions type 1 =", j)
 #print(subst1List)
 
 if debug:
@@ -659,7 +659,7 @@ for k in range(0, len(subst6BTList)):
                         print("inglyph name= ", [inglyph, outglyph])
             continue  # get substitute list in correct order
 
-print("number of BT substitutions type 1 to be made =", j)
+print("number of BT substitutions type 1 =", j)
 #print(subst1BTList)
 
 if debug:
