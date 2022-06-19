@@ -362,7 +362,7 @@ for k in range(0, len(lkList)):
                 if "rkrf" == lookuplist[j][1]:  # check rkrf
                     rakaarList.append(lookuplist[j][3])
                     enablerakaar = True
-                    print("rakaar feature found in table = " , lookuplist[j][3], "a nd enabled")
+                    print("rakaar feature found in table = " , lookuplist[j][3], "and enabled")
 
 print("Lookup table index: llList =", llList)
 if Deva:
@@ -1019,10 +1019,10 @@ def retrieve_input():
                         if wordname[j2 + 1] == viramaname:  # reph sequence found
                             #print("before reph =", wordname)
                             # ignore reph subst at the end of the word
-                            if wordname[j2+2] == SpaceName or \
-                                    wordname[j2+2] == "," or \
-                                    wordname[j2 + 2] == None or \
-                                    wordname[j2+2] == ".":
+                            if wordname[j2 + 2] == SpaceName or \
+                                    wordname[j2 + 2] == "," or \
+                                    wordname[j2 + 2] is None or \
+                                    wordname[j2 + 2] == ".":
                                 continue
                             # look for a vowel sign after the consonant
                             elif wordname[j2 + 3] == vowelname0 or \
@@ -1033,10 +1033,11 @@ def retrieve_input():
                                 wordname[j2 + 3] == vowelname15 or \
                                 wordname[j2 + 2] == vowelname1b or \
                                 wordname[j2 + 3] == vowelname0a:
+                                # note: vowelname1b has been swapped earlier; it is at j2+2
                                 # now shift reph sign to correct location
                                 wordname[j2] = wordname[j2 + 2]
-                                wordname[j2+1] = wordname[j2 + 3]
-                                wordname[j2+2] = rephlookupList[0][2]
+                                wordname[j2 + 1] = wordname[j2 + 3]
+                                wordname[j2 + 2] = rephlookupList[0][2]
                                 del wordname[j2 + 3]
                                 #del wordname[j2 + 3]
                                 rephreplace = rephreplace + 1
@@ -1060,8 +1061,8 @@ def retrieve_input():
                             else:
                                 # a simple consonant after reph
                                 wordname[j2] = wordname[j2 + 2]
-                                wordname[j2+1] = rephlookupList[0][2]
-                                del wordname[j2+2]
+                                wordname[j2 + 1] = rephlookupList[0][2]
+                                del wordname[j2 + 2]
                                 rephreplace = rephreplace + 1
                             #print("after reph =", wordname)
 
@@ -1107,7 +1108,7 @@ def retrieve_input():
                                         #       classnumber2, rulenumber2)
                                         for i6 in range(0, len(subst5lookup1List)):
                                             #print("stage 3 =", wordclass, classnumber2, nextclassnumber2, subst5RuleList[i5][4])
-                                            if wordname[charpos+1] == subst5lookup1List[i6][2] and lookupnumber2 == \
+                                            if wordname[charpos + 1] == subst5lookup1List[i6][2] and lookupnumber2 == \
                                                     subst5lookup1List[i6][1] \
                                                     and tablenumber2 == subst5lookup1List[i6][0] \
                                                     and rulenumber2 == subst5lookup1List[i6][5] \
