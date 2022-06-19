@@ -123,11 +123,12 @@ dorakaar = True
 # I really can't help here, since I do not know these rules.
 # Fixed above problems by adding crude reph and rakaar engines.
 
+# 19 Jun 2022
 # added GSUB lookup type 5, but not sure if it is correct and latha.ttf still
 # does not display Tamil vii வீ char correctly. Unicode sign ீ is placed wrongly.
 # May be it depends on GPOS. But Tamil vi வி char works now, as it picks up the
 # correct version of the postfix unicode sign ி!
-
+# 19 Jun 2022
 # added crude reph and rakaar sustitution engines. Somewhat works
 # but not fully tested
 
@@ -357,16 +358,16 @@ for k in range(0, len(lkList)):
                 if "rphf" == lookuplist[j][1]:  # check rphf
                     rephList.append(lookuplist[j][3])
                     enablereph = True
-                    print("reph feature found in table and enabled =", lookuplist[j][3])
+                    print("reph feature found in table = " , lookuplist[j][3], " and enabled")
                 if "rkrf" == lookuplist[j][1]:  # check rkrf
                     rakaarList.append(lookuplist[j][3])
                     enablerakaar = True
-                    print("rakaar feature found in table and enable =", lookuplist[j][3])
+                    print("rakaar feature found in table = " , lookuplist[j][3], "a nd enabled")
 
 print("Lookup table index: llList =", llList)
 if Deva:
-    print("reph table index and reph status: rephList =", rephList, enablereph)
-    print("rakaar table index and rakaar status: rakaarList =", rakaarList, enablerakaar)
+    print("reph table index: rephList =", rephList, "and reph enable = ", enablereph)
+    print("rakaar table index: rakaarList =", rakaarList, "and rakaar enable =", enablerakaar)
 
 # get reph substitution table here
 if Deva and enablereph and doreph:
@@ -389,7 +390,7 @@ if Deva and enablereph and doreph:
                         j = j + 1
                 continue  # get substitute list in correct order
 
-    print("reph substitutions to be made =", j)
+    print("number of reph substitutions to be made =", j)
     #print("rephlookupList = ", rephlookupList)
 
 # get rakaar substitution table here
@@ -412,7 +413,7 @@ if Deva and enablerakaar and dorakaar:
                         j = j + 1
                 continue  # get substitute list in correct order
 
-    print("rakaar substitutions to be made =", j)
+    print("number of rakaar substitutions to be made =", j)
     #print("rakaarlookupList = ", rakaarlookupList)
 
 # get char substitution type 4 list here
@@ -831,8 +832,16 @@ clipText = clipboard.paste()  # text will have the content of clipboard
 # print(tk_font.families())
 # print(tk_font.names())
 
-print("All GSUB lookup tables in the font file are now loaded and we are ready to convert the input. \nPlease enter/paste unicode data in the "
-      "first screen!")
+print("")
+print("*******************************************")
+print("All GSUB lookup tables in the font file are now loaded and \n"
+      "we are ready to convert the input!\n \nPlease select and enter/paste unicode data in the "
+      "first screen, \npress Convert button, and press Copy botton to copy the converted glyph "
+      "\nstring in the third screen to clipboard! "
+      "The Clear button clears all screens \nand the clipboad."
+      "\nThe second or middle screen shows"
+      " the unicode numbers of the input string, \nused for debug purposes only.")
+print("*******************************************")
 
 def clear_all():
     global finalDisp
