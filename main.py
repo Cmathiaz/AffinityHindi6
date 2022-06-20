@@ -1113,14 +1113,14 @@ def retrieve_input():
                                                     and tablenumber2 == subst5lookup1List[i6][0] \
                                                     and rulenumber2 == subst5lookup1List[i6][5] \
                                                     and classnumber2 == subst5lookup1List[i6][4]:
-                                                print("type 5 susbt before doing", ij, charpos, word, wordname,
-                                                      tablenumber2, lookupnumber2,
-                                                      wordname[charpos], wordname[charpos + 1])
+                                                # print("type 5 susbt before doing", ij, charpos, word, wordname,
+                                                #       tablenumber2, lookupnumber2,
+                                                #       wordname[charpos], wordname[charpos + 1])
                                                 wordname[charpos+1] = subst5lookup1List[i6][3]
                                                 replace = 0
-                                                print("type 5 susbt after done", word, wordname, tablenumber,
-                                                      lookupnumber2,
-                                                      wordname[charpos], wordname[charpos + 1])
+                                                # print("type 5 susbt after done", word, wordname, tablenumber,
+                                                #       lookupnumber2,
+                                                #       wordname[charpos], wordname[charpos + 1])
                                                 continue
 
                         #break  # do only for first in subst5list table? not sure here!
